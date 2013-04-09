@@ -11,13 +11,13 @@ import 'package:widget/widget.dart';
 // TODO: cleaner about having requests pile up...handle the pending change cleanly
 
 /**
- * [Swap] is a low-level component designed to be composed by other components.
- * It exposes the functionality of the [Swapper] effect as a simple container element with corresponding methods to
+ * [XSwap] is a low-level component designed to be composed by other components.
+ * It exposes the functionality of the [XSwapper] effect as a simple container element with corresponding methods to
  * `swap` between child elements via code.
  *
- * [Tabs] and [Carousel] both use this component.
+ * [XTabs] and [XCarousel] both use this component.
  */
-class Swap extends WebComponent implements SwapComponent {
+class XSwap extends WebComponent implements SwapComponent {
   static const _activeClass = 'active';
   static const _dirClassPrev = 'prev';
 
@@ -84,7 +84,7 @@ class Swap extends WebComponent implements SwapComponent {
 
   void _initialize() {
     if(_contentElementField == null) {
-      _contentElementField = this.query('x-swap > .content');
+      _contentElementField = this.query('.content');
       if(_contentElementField == null) {
         throw 'Could not find the content element. Either the template has changed or state was accessed too early in the component lifecycle.';
       }

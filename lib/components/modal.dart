@@ -8,15 +8,15 @@ import 'package:widget/widget.dart';
 // TODO: ESC to close: https://github.com/kevmoo/widget.dart/issues/17
 
 /**
- * When added to a page, [Modal] is hidden. It can be displayed by calling the `show` method.
+ * When added to a page, [XModal] is hidden. It can be displayed by calling the `show` method.
  *
- * Similar to [Alert], elements with the attribute `data-dismiss="modal"` will close [Modal] when clicked.
+ * Similar to [Alert], elements with the attribute `data-dismiss="modal"` will close [XModal] when clicked.
  *
- * Content within [Modal] is placed in a div with class `modal` so related styles from Bootstrap are applied.
+ * Content within [XModal] is placed in a div with class `modal` so related styles from Bootstrap are applied.
  *
- * The [Modal] component leverages the [ModalManager] effect.
+ * The [XModal] component leverages the [ModalManager] effect.
  */
-class Modal extends WebComponent implements ShowHideComponent {
+class XModal extends WebComponent implements ShowHideComponent {
   bool _isShown = false;
 
   bool get isShown => _isShown;
@@ -68,7 +68,7 @@ class Modal extends WebComponent implements ShowHideComponent {
     }
   }
 
-  Element _getModalElement() => this.query('x-modal > .modal');
+  Element _getModalElement() => this.query('.modal');
 
   void _onClick(MouseEvent event) {
     if(!event.defaultPrevented) {
