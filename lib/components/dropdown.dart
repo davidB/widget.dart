@@ -81,8 +81,8 @@ class XDropdown extends WebComponent implements ShowHideComponent {
 
   static void closeDropdowns() {
     document.queryAll('x-dropdown')
-      .where((e) => e.xtag is Dropdown)
-      .map((e) => e.xtag as Dropdown)
+      .where((e) => e.xtag is XDropdown)
+      .map((e) => e.xtag as XDropdown)
       .forEach((dd) => dd.hide());
   }
 
