@@ -5,12 +5,12 @@ import 'package:widget/widget.dart';
 import 'package:bot/bot.dart';
 
 /**
- * [Accordion] wraps a set of [Collapse] elements and ensures only one is visible
+ * [XAccordion] wraps a set of [Collapse] elements and ensures only one is visible
  * at a time.
  *
  * See [Collapse] for details on how content is interpreted.
  */
-class Accordion extends WebComponent {
+class XAccordion extends WebComponent {
   @protected
   void created() {
     ShowHideComponent.toggleEvent.forTarget(this).listen(_onOpen);
@@ -26,7 +26,7 @@ class Accordion extends WebComponent {
       });
   }
 
-  List<Element> _getAllCollapseElements() => this.queryAll('x-accordion > x-collapse');
+  List<Element> _getAllCollapseElements() => this.queryAll('x-collapse');
 
   void _onOpen(Event openEvent) {
     if(openEvent.target is UnknownElement) {

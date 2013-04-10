@@ -25,7 +25,7 @@ class XCarousel extends WebComponent {
 
   Future<bool> previous() => _moveDelta(false);
 
-  SwapComponent get _swap => this.query('.carousel > x-swap').xtag;
+  SwapComponent get _swap => this.query('x-swap').xtag;
 
   Future<bool> _moveDelta(bool doNext) {
     final swap = _swap;
